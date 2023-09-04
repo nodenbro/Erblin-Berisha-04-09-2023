@@ -1,4 +1,4 @@
-# student-login
+# Vue Student Login Project for Internship Application
 
 ## Project setup
 ```
