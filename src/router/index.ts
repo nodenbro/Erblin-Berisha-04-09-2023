@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import LoginView from '../views/LoginView.vue'
+import TestView from '../views/TestView.vue'
+import CarouselView from '../views/CarouselView.vue'
 import { component } from 'vue/types/umd'
 
 Vue.use(VueRouter)
@@ -8,8 +10,8 @@ Vue.use(VueRouter)
 const routes: Array<RouteConfig> = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'LoginView',
+    component: LoginView
   },
   {
     path: '/about',
@@ -22,7 +24,13 @@ const routes: Array<RouteConfig> = [
   {
     path: '/test',
     name: 'test',
-    component: () => import(/* webpackChunkName: "about" */ '../views/TestView.vue')
+    component: TestView
+    
+  },
+  {
+    path: '/carousel',
+    name: 'Carousel',
+    component: CarouselView
     
   }
 ]

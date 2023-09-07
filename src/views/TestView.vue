@@ -1,9 +1,21 @@
 <template>
-    <h1>
+    <div class="testing-stuff">
+        <h1>
         This is from the view Folder
-    </h1>
+        </h1>
+        <hr>
+        <Testing />
+    </div>
+
 </template>
 
 <script lang="ts">
+    import Testing from '@/components/Test.vue';
     console.log("Fuck you sneakily.");
+    export default {
+        name: "Test",
+        components: {
+            Testing
+        }
+    }
 </script>
