@@ -1,6 +1,8 @@
 @import 'misc/login';
 
-
+html {
+  height: 100%;
+}
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -9,10 +11,13 @@
     color: #2c3e50;
   }
   body {
-    background-color: black;
+    // background-image: linear-gradient(to bottom right, red, yellow);
+    background-image: url("../../assets/imgs/green-bg.png");
     width: 100%;
   }
-  
+  .home {
+    width: 100%;
+  }
   nav {
     padding: 30px;
   
