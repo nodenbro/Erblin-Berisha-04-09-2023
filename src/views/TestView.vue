@@ -11,7 +11,6 @@
 
 <script lang="ts">
     import Testing from '@/components/Test.vue';
-    console.log("Fuck you sneakily.");
     export default {
         name: "Test",
         components: {

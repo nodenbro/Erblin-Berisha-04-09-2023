@@ -64,7 +64,7 @@ export default {
 				} 
 				else 
 				{
-					this.$bvToast.toast(`Username or Password is incorrect`, 
+					this.$bvToast.toast(`Username or Password is incorrect.`, 
 					{
 						title: 'Login Failed!',
 						variant: 'danger',

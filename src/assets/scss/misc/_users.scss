@@ -1,16 +1,18 @@
 .users-container {
     margin: 0 auto;
     max-width: 1700px;
-    border: 10px solid magenta;
+    // border: 10px solid magenta;
     height: 670px;
     margin-bottom: -10%;
     .table {
         background-color: white;
         width: 100%;
+        border: 2px solid gray;
         
         .actions-column {
             display: flex;
             justify-content: space-around;
+            font-size: 1.3rem;
         }
     }
     .search-register-bar{
@@ -48,11 +50,18 @@
             justify-content: flex-end;
             margin: auto 0;
             .register-btn {
-                border-radius: 5px;
-                background-color: rgba($color: white, $alpha: 0.8);
-                
+                border-radius: 5px;             
+                max-width: 1000px;
+                width: 100%;
+                padding: 0 20px;
+                height: 35px;
+                background-color: lime;
+                border: 1px solid gray;
+                font-size: 1.2rem;
+                font-weight: bold;
             }
         }
+
     }
 
 }
