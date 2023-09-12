@@ -13,18 +13,6 @@
           <input type="password" placeholder="Password" id="password" name="password" v-model="password">
         </div> <!-- /login-content -->
         <button class="button" type="submit" id="liveToastBtn">Log In</button>
-
-
-		<!-- <div class="toast align-items-end text-bg-primary border-0" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
-		<div class="d-flex">
-			<div class="toast-body">
-			Hello, world! This is a toast message.
-			</div>
-			<button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-		</div>
-		</div> -->
-
-
       </form>
     </div> <!-- /login-form -->
   </div> <!-- /hello -->
@@ -49,7 +37,6 @@ export default {
 				if(this.username === "admin" && this.password === "password") 
 				{ setTimeout(() => {
 					router.push('users');
-					// console.log("Its Working");
 
 				}, 1500);
 				this.$bvToast.toast(`Redirecting...`, 
