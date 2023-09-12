@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import LoginView from '../views/LoginView.vue'
+import UsersView from '../views/UsersView.vue'
 import TestView from '../views/TestView.vue'
 import CarouselView from '../views/CarouselView.vue'
 import { component } from 'vue/types/umd'
@@ -20,6 +21,12 @@ const routes: Array<RouteConfig> = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+  },
+  {
+    path: '/users',
+    name: 'UsersView',
+    component: UsersView
+    
   },
   {
     path: '/test',

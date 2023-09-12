@@ -1,0 +1,39 @@
+.users-container {
+    margin: 0 auto;
+    max-width: 1700px;
+    border: 10px solid magenta;
+    height: 670px;
+    margin-bottom: -10%;
+    .table {
+        background-color: white;
+        width: 100%;
+        
+        .actions-column {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+    .search-box {
+        max-width: 600px;
+        width: 25%;
+        display: flex;
+        margin: 10px 0 ;
+        .search-box input {
+            height: 34px;
+            border-radius: 30px;
+            padding-left: 35px;
+            border-color: #ddd;
+            box-shadow: none;
+        }
+        &input:focus {
+            border-color: #3FBAE4;
+        }
+        &i {
+            color: #a0a5b1;
+            position: absolute;
+            font-size: 19px;
+            top: 8px;
+            left: 10px;
+        }
+    }
+}
