@@ -1,11 +1,19 @@
 <template>
 <div class="users">
     <div class="users-container">
-        <div class="search-box">
-            <i class="material-icons">&#xE8B6;</i>
-            <input type="text" class="form-control" placeholder="Search" v-model="search">
+    <div class="search-register-bar">
+        <div class="search-box" style=".searchbox:focus{ border-color: #3FBAE4;}">
+            <!-- <i class="material-icons icon">&#xE8B6;</i> -->
+            <i class="fa fa-search icon" aria-hidden="true"></i>
+            <input type="text" class="search-form" placeholder="Search" v-model="search">
         </div> <!-- /search-box -->
 
+        <div class="register">
+            <button class="register-btn">
+                Register new student
+            </button>
+        </div><!-- /register -->
+    </div> <!-- search-register-bar -->
         <table class="table">
             <thead>
                 <tr>
