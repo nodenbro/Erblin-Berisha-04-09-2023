@@ -1,6 +1,6 @@
 <template>
-  <div class="hello">
-    <div class="container">
+  <div class="login-component">
+    <div class="inner-container">
 
       <form action="#" @submit="login();" onsubmit="return false">
 

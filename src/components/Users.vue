@@ -1,5 +1,8 @@
 <template>
 <div class="users">
+
+    <Nav />
+
     <div class="users-container">
         <div class="search-register-bar">
             <div class="search-box">
@@ -9,17 +12,15 @@
             </div> <!-- /search-box -->
 
             <div class="register">
-                <button class="register-btn" @click="register()">
+                <button class="register-btn" @click="register_modal()">
                     Register New Student
                 </button>
             </div><!-- /register -->
         </div> <!-- search-register-bar -->
 
 
-
-
         <div class="modals-div">
-            <b-modal id="modal-1" content-class="shadow" centered title="Register Student">
+            <b-modal id="modal-1" content-class="shadow" centered title="Register Student" @ok="addStudent()">
                 <form ref="form">
 
                     <!-- Index Input Field -->
@@ -29,8 +30,8 @@
                     >
                         <b-form-input
                             id="index-input"
-                            v-model="index"
-                            
+                            v-model="student.index"
+                            disabled
                         ></b-form-input>
                     </b-form-group>
 
@@ -41,7 +42,8 @@
                     >
                         <b-form-input
                             id="name-input"
-                            v-model="name"
+                            v-model="student.name"
+                            required
                         ></b-form-input>
                     </b-form-group>
 
@@ -53,7 +55,8 @@
                         <b-form-input
                             id="birthdate-input"
                             type="date"
-                            v-model="birthdate"
+                            v-model="student.birthday"
+                            required
                         ></b-form-input>
                     </b-form-group>
 
@@ -64,17 +67,13 @@
                     >
                         <b-form-select
                         class="form-select"
+                        v-model="student.city"
                         :options="cities">
                         </b-form-select>
                     </b-form-group>
                 </form>
             </b-modal>
         </div> <!-- modals-div -->
-
-
-
-
-
 
 
         <table class="table">
@@ -195,14 +194,21 @@
 </template>
 
 <script>
+    import Nav from "../components/Nav.vue"
+
     export default {
+        components: {
+            Nav
+        },
         data () {
             return {
                 students: JSON.parse(localStorage.getItem('Students')) || [],
-                index:"",
-                name:"",
-                birthdate:"",
-                city:"",
+                student: {
+                    index: 0,
+                    name:"",
+                    birthday:"",
+                    city:""
+                },
                 search: "",
                 cities: [
                     { value: 'Prishtina', text: 'Prishtina' },
@@ -218,9 +224,16 @@
             sort() {
                 console.log("The Sort Icon Works");
             },
-            register() {
-                console.log("Register Button Pressed!")
-                this.$bvModal.show("modal-1")
+            register_modal() {
+                console.log("Register Button Pressed!");
+                this.$bvModal.show("modal-1");
+            },
+            addStudent () {
+                this.student.index = this.students.length + 1;
+                this.students.push(this.student);
+                localStorage.setItem('Students', JSON.stringify(this.students));
+                console.log(this.students.length);
+                location.reload();
             }
         }
     }
