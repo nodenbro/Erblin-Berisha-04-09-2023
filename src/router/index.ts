@@ -16,14 +16,6 @@ const routes: Array<RouteConfig> = [
     component: LoginView
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  },
-  {
     path: '/users',
     name: 'UsersView',
     component: UsersView
@@ -33,18 +25,6 @@ const routes: Array<RouteConfig> = [
     path: '/archives',
     name: 'ArchivesView',
     component: ArchivesView
-    
-  },
-  {
-    path: '/test',
-    name: 'test',
-    component: TestView
-    
-  },
-  {
-    path: '/carousel',
-    name: 'Carousel',
-    component: CarouselView
     
   }
 ]

@@ -239,7 +239,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="student in filteredStudents.slice(0,9)" :key="student.id" class="table-row">
+                <tr v-for="student in filteredPageOfStudents" :key="student.id" class="table-row">
                     <td>{{ student.index }}</td>
                     <td>{{ student.name}}</td>
                     <td>{{ student.birthday}}</td>
@@ -252,12 +252,30 @@
                 </tr>
             </tbody>
         </table>
-    </div> <!-- users-container -->
+        <div class="pagination">
+            <jw-pagination
+                :disableDefaultStyles="true"
+                :labels="customLabels"
+                :maxPages="3"
+                :pageSize="9"
+                :items="students"
+                @changePage="onChangePage"
+            >
+            </jw-pagination>
+        </div> <!-- /pagination-->
+    </div> <!-- /users-container -->
 </div> <!-- /users -->
 </template>
 
 <script>
     import Nav from "../components/Nav.vue"
+
+    const customLabels = {
+        first: '<<',
+        last: '>>',
+        previous: '<',
+        next: '>'
+    }
 
     export default {
         components: {
@@ -265,6 +283,8 @@
         },
         data () {
             return {
+                customLabels,
+                pageOfStudents: [],
                 students: JSON.parse(localStorage.getItem('Students')) || [],
                 archives: JSON.parse(localStorage.getItem('Archives')) || [],
                 student: {
@@ -273,7 +293,7 @@
                     birthday:"",
                     city:""
                 },
-                
+                sortOrder: 'asc',
                 search: "",
                 cities: [
                     { value: 'Prishtina', text: 'Prishtina' },
@@ -286,14 +306,18 @@
 
         },
         computed: {
-            filteredStudents () {
-            return this.students.filter(student =>
+            filteredPageOfStudents () {
+            return this.pageOfStudents.filter(student =>
                 student.name.toLowerCase().includes(this.search) ||
                 student.city.toLowerCase().includes(this.search) ||
                 student.index.toString().toLowerCase().includes(this.search))
             }
         },
         methods: {
+            onChangePage (pageOfStudents) {
+                // update page of items
+                this.pageOfStudents = pageOfStudents
+            },
 
             // Register
             register_modal() {
@@ -302,7 +326,7 @@
             },
 
             addStudent () {
-                this.student.index = this.students.length + 1;
+                this.student.index = this.students.length + this.archives.length + 1;
                 this.students.push(this.student);
                 localStorage.setItem('Students', JSON.stringify(this.students));
                 console.log(this.students.length);
@@ -361,7 +385,7 @@
             },
 
             sortName () {
-                this.students.sort((a, b) => {
+                this.pageOfStudents.sort((a, b) => {
                     if (a.name < b.name) {
                     return -1
                     } else if (a.name > b.name) {
@@ -371,13 +395,13 @@
                 })
 
                 if (this.sortOrder === 'desc') {
-                    this.students.reverse()
+                    this.pageOfStudents.reverse()
                 }
-                return this.studentss
+                return this.pageOfStudents
             },
 
             sortBirthday () {
-                this.students.sort((a, b) => {
+                this.pageOfStudents.sort((a, b) => {
                     if (a.birthday < b.birthday) {
                     return -1
                     } else if (a.birthday > b.birthday) {
@@ -387,13 +411,13 @@
                 })
 
                 if (this.sortOrder === 'desc') {
-                    this.students.reverse()
+                    this.pageOfStudents.reverse()
                 }
-                return this.students
+                return this.pageOfStudents
             },
 
             sortCity () {
-                this.students.sort((a, b) => {
+                this.pageOfStudents.sort((a, b) => {
                     if (a.city < b.city) {
                     return -1
                     } else if (a.city > b.city) {
@@ -403,9 +427,9 @@
                 })
 
                 if (this.sortOrder === 'desc') {
-                    this.students.reverse()
+                    this.pageOfStudents.reverse()
                 }
-                return this.students
+                return this.pageOfStudents
             },
         }
     }

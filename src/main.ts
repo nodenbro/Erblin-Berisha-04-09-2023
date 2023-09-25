@@ -8,12 +8,14 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import './assets/scss/index.scss'
 
+import JwPagination from 'jw-vue-pagination';
+// const JwPagination = require('jw-vue-pagination');
+Vue.component('jw-pagination', JwPagination);
+
 
 Vue.use(BootstrapVue)
 
 Vue.use(IconsPlugin)
-
-
 
 Vue.config.productionTip = false
 

@@ -72,6 +72,20 @@
         }
 
     }
+    .pagination
+    {
+        // margin: 0;
+        // padding: 0;
+        // display:flex;
+        justify-content: flex-end;
+        // width: 50%;
+        border-radius: 20px;
+
+        li {
+            margin: 0;
+        }
+        // align-items: flex-end;
+    }
 
 }
 // .search-box:focus {
