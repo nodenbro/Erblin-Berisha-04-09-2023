@@ -26,6 +26,7 @@
             <b-modal 
             id="register-Modal" 
             content-class="shadow" 
+            ok-title="Confirm"
             centered 
             title="Register Student" 
             @ok="addStudent()">
@@ -88,6 +89,9 @@
             <b-modal 
             id="view-Modal" 
             content-class="shadow" 
+            ok-title="Close"
+            ok-only
+            ok-variant="secondary"
             centered 
             title="View Student Information" 
             >
@@ -152,6 +156,7 @@
              <b-modal 
             id="edit-Modal" 
             content-class="shadow" 
+            ok-title="Confirm"
             centered 
             title="Edit Student Information" 
             @ok="editUser(student, index)">

@@ -19,6 +19,9 @@
                 <b-modal 
                 id="view-archive-Modal" 
                 content-class="shadow" 
+                ok-title="Close"
+                ok-only
+                ok-variant="secondary"
                 centered 
                 title="View Student Information" 
                 >
@@ -95,7 +98,7 @@
                 <!--  End of Delete User Modal  -->
 
                 
-                <!--  Delete User Modal  -->
+                <!--  Restore User Modal  -->
                 <b-modal
                     id="restore-Modal"
                     centered
@@ -108,7 +111,7 @@
                         Do you want to restore this Student?
                     </h5>
                 </b-modal>
-                <!--  End of Delete User Modal  -->
+                <!--  End of Restore User Modal  -->
 
             </div> <!-- modals-div -->
 
