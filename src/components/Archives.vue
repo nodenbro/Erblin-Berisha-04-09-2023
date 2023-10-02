@@ -143,7 +143,7 @@
                     :disableDefaultStyles="true"
                     :labels="customLabels"
                     :maxPages="3"
-                    :pageSize="2"
+                    :pageSize="9"
                     :items="students"
                     @changePage="onChangePage"
                 >
