@@ -4,6 +4,7 @@
     // border: 10px solid magenta;
     height: 670px;
     margin-bottom: -10%;
+
     .table {
         background-color: white;
         width: 100%;
@@ -14,13 +15,16 @@
             justify-content: space-around;
             font-size: 1.3rem;
         }
+
         .table-row:hover {
             background-color: #e0e0e0;
         }
     }
+
     .search-register-bar{
         display: flex;
         justify-content: space-between;
+
         .search-box {
             max-width: 400px;
             width: 25%;
@@ -29,6 +33,12 @@
             background-color: white;
             border-radius: 20px;
             border: 1px solid gray;
+
+            &:hover {
+                border-color: #3FBAE4;
+                transition: background-color .5s ease-out 20ms;
+            }
+
             &i {
                 color: #a0a5b1;
                 position: absolute;
@@ -36,10 +46,12 @@
                 top: 8px;
                 left: 10px;
             }
+
             .icon {
                 padding: 10px;
                 min-width: 40px;
             }
+
             .search-form {
                 height: 40px;
                 border-radius: 20px;
@@ -49,9 +61,11 @@
                 width: 90%;
             }
         }
+
         .register {
             justify-content: flex-end;
             margin: auto 0;
+
             .register-btn {
                 border-radius: 5px;             
                 max-width: 1000px;
@@ -63,6 +77,7 @@
                 font-size: 1.2rem;
                 font-weight: bold;
                 transition: background-color .5s ease-out 20ms;
+
                 &:hover {
                     background-color: #94aa09;
                     transition: background-color .5s ease-out 20ms;
@@ -72,23 +87,16 @@
         }
 
     }
+
     .pagination
     {
-        // margin: 0;
-        // padding: 0;
-        // display:flex;
         justify-content: flex-end;
-        // width: 50%;
         border-radius: 20px;
 
         li {
             margin: 0;
         }
-        // align-items: flex-end;
     }
 
 }
-// .search-box:focus {
-//     border: 3px solid #3FBAE4;
-//     background: blue;
-// }
+

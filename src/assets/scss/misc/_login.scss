@@ -1,17 +1,21 @@
 h3 {
     margin: 40px 0 0;
   }
+
   ul {
     list-style-type: none;
     padding: 0;
   }
+
   li {
     display: inline-block;
     margin: 0 10px;
   }
+
   a {
     color: #42b983;
   }
+
   .inner-container {
     position: absolute;
     top: 50%;
@@ -25,7 +29,6 @@ h3 {
     width: 100%;
     display: flex;
     align-items: center;
-    // justify-content: center;
     background: linear-gradient(75.7deg, rgb(34, 126, 34) 3.8%, rgb(99, 162, 17) 87.1%);
 
     form {
@@ -42,6 +45,7 @@ h3 {
         font-size: 1.2rem;
         align-items: center;
         margin: 0 auto;
+
         .logo {
           margin: 0 auto;
           width: 50%;
@@ -65,8 +69,8 @@ h3 {
           font-weight: bold;
           font-style: italic;
         }
-
       }
+
       .button {
         margin: 0 auto;
         margin-top: 2%;
@@ -80,10 +84,12 @@ h3 {
         background-color: #7CFC00;
         transition: background-color .5s ease-out 20ms;
         box-shadow: 0 6px #7CFC00;
+
         &:hover {
           background-color: #00A36C;
           box-shadow: 0 6px #2AAA8A;
         }
+
         &:active {
           background-color: #478778;
           box-shadow: 0 5px #2AAA8A;
@@ -91,9 +97,5 @@ h3 {
         }
       }
     }
-
-
-
-
   }
 
